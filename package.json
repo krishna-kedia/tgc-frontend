@@ -1,6 +1,6 @@
 {
   "name": "tgc-website",
-  "proxy": "http://143.110.253.103:5000/api",
+  "proxy": "http://143.110.253.103:5000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
