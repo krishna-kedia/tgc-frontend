@@ -56,7 +56,7 @@ class Chapter extends Component {
     try {
         let chapters = await fetch('/chapters')
         chapters = await chapters.json()
-       
+       console.log(chapters, 'fetch data')
         this.setState({
           chaptersInfo: chapters.chapters,
           stat1: chapters.stat1,
@@ -64,7 +64,7 @@ class Chapter extends Component {
           stat3: chapters.stat3,
           loading: false
         }, () => {
-         
+         console.log(this.state, 'hi hello')
         })
        
         
@@ -81,6 +81,7 @@ class Chapter extends Component {
   componentDidMount(){
     this.fetchData()
     window.scrollTo(0,0)
+    console.log('component mounted')
   }
 
   toggleShow = () => {
@@ -106,6 +107,7 @@ class Chapter extends Component {
       loading,
       buttonText
     } = this.state
+    console.log(this.state, 'render')
     return (
       <div>
       <NavBar

@@ -33,6 +33,8 @@ class Workshop extends React.Component {
     upcomingWorkshopItems: 4,
     pastWorkshopItems: 4,
     loading: true,
+    stat1: null,
+    stat2: null,
     buttonText: "See More Workshops",
     expanded: false,
     myRef: React.createRef(),
@@ -44,7 +46,9 @@ class Workshop extends React.Component {
    
     this.setState({
       pastWorkshopsData: workshops.workshops,
-      loading: false
+      loading: false,
+      stat1: workshops.stat1,
+      stat2: workshops.stat2
     })
   };
 
@@ -107,9 +111,9 @@ class Workshop extends React.Component {
         <Container className="my-4">
           <Stats
             stats={[
-              ["70", "FLAGSHIP STAT1"],
-              ["400+", "FLAGSHIP STAT2"],
-              ["35", "FLAGSHIP STAT3"],
+              [this.state.stat1, "WORKSHOPS"],
+              ["1500+", "STUDENTS IMPACTED"],
+              [this.state.stat2, "ACTIVE CHAPTERS"],
             ]}
           />
         </Container>
