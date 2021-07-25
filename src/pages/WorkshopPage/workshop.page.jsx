@@ -41,7 +41,7 @@ class Workshop extends React.Component {
   };
 
   fetchData = async () => {
-    let workshops = await fetch('/workshops')
+    let workshops = await fetch('http://143.110.253.103:5000/api/workshops')
     workshops = await workshops.json()
    
     this.setState({

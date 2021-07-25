@@ -46,7 +46,7 @@ class IndWorkshop extends React.Component {
   fetchData = async () => {
     const workshopId = this.props.match.params.workshopId
    
-    let workshopData = await fetch(`/workshop/${workshopId}`)
+    let workshopData = await fetch(`http://143.110.253.103:5000/api/workshop/${workshopId}`)
     workshopData = await workshopData.json()
    
     this.setState({

@@ -61,7 +61,7 @@ class IndividualChapter extends React.Component {
   fetchData = async () => {
     const chapterId = this.props.match.params.chapterId
    
-    let chapterData = await fetch(`/chapter/${chapterId}`)
+    let chapterData = await fetch(`http://143.110.253.103:5000/api/chapter/${chapterId}`)
     chapterData = await chapterData.json()
    
     this.setState({
