@@ -54,7 +54,7 @@ class Chapter extends Component {
 
   fetchData = async () => {
     try {
-        let chapters = await fetch('http://143.110.253.103:5000/chapters')
+        let chapters = await fetch('/chapters')
         chapters = await chapters.json()
        console.log(chapters, 'fetch data')
         this.setState({
