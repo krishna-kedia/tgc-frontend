@@ -10,6 +10,7 @@
     "bootstrap": "^4.5.3",
     "bootstrap-styled": "^2.7.2",
     "google-spreadsheet": "^3.1.15",
+    "jquery": "^3.6.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
