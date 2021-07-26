@@ -31,7 +31,7 @@ class App extends Component {
         <Route exact path="/chapter" component={Chapter} />
         <Route exact path="/workshop/:workshopId" component={IndWorkshop} />
         <Route exact path="/buildnotactive" component={BuildPrevious} />
-        <Route exact path="/buildactive" component={BuildActive} />
+        <Route exact path="/build" component={BuildActive} />
       </Router>
     );
   }

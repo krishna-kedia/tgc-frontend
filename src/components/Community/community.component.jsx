@@ -1,51 +1,74 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import superhero from '../../assets/homepage/superhero.png';
-import { HeadingStyle,DescriptionStyle,Align } from "./community.styles";
+import superhero from "../../assets/homepage/superhero.png";
+import { HeadingStyle, DescriptionStyle, Align } from "./community.styles";
 
-
-export default function CommunitySection({content }) {
-  const listItems = content.map(c => (
-    <Row>
-       <div
+export default function CommunitySection({ content }) {
+  const listItems = content.map((c) => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginBottom: "0.5em",
+      }}
+    >
+      <div
         style={{
-          fontSize: "35px",
+          fontSize: "2em",
           color: "#D74B83",
           fontWeight: 700,
-          marginLeft: "auto",
-          marginRight: "auto",
+          textAlign: "center",
         }}
       >
-        <HeadingStyle>{c[0]}</HeadingStyle>
-         
+        {c[0]}
       </div>
       <div
         style={{
           color: "#666666",
           fontSize: "1em",
           textAlign: "center",
-          marginBottom:"2em",
-          
+          width: "80%",
         }}
       >
-       <DescriptionStyle> {c[1]}</DescriptionStyle>
-       </div>
-    </Row>
+        {c[1]}
+      </div>
+    </div>
   ));
+
   return (
     <Container>
-      <Row>
+      <Row style={{ height: "100%" }}>
         <Col lg={6} md={5} sm={12} xs={12}>
-          <Align>
-          {listItems}
-          </Align>
+          <div
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+            }}
+          >
+            {listItems}
+          </div>
         </Col>
-        <Col  lg={6} md={7} sm={12} xs={12} style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
-          <Image src={superhero} style={{width:"100%"}} />
+        <Col
+          lg={6}
+          md={7}
+          sm={12}
+          xs={12}
+          style={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <Image src={superhero} style={{ width: "100%" }} />
         </Col>
       </Row>
     </Container>
   );
 }
-  
