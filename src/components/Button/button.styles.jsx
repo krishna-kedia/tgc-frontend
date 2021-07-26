@@ -14,7 +14,6 @@ export const ButtonStyle = styled.div`
   letter-spacing: 2;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  margin-right: 1rem;
   box-shadow: 0 3px 4px #f05680;
   &:hover {
     //background-color: #f05680;

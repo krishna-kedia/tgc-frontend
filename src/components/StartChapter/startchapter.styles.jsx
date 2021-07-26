@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const BoxText = styled.p`
   color: #333;
   font-weight: 400;
-  padding-left: 0.5rem;
-  margin-top: 1rem;
   line-height: 165.24%;
   font-size: 1.5rem;
   text-align: left;
+  width: 80%;
   @media screen and (min-width: 767px) {
     text-align: center;
     font-size: 1.25rem;
@@ -55,7 +54,7 @@ export const Button = styled.button`
 
 export const BoxImage = styled.div`
   display: inline-block;
-  width: 60%;
+  width: 100%;
   @media screen and (max-width: 560px) {
     width: 100%;
   }
@@ -69,7 +68,7 @@ export const Logo = styled.img`
   }
 `;
 
-export const SecondaryButton = styled.button`
+export const SecondaryButton = styled.div`
   display: none;
   @media screen and (max-width: 560px) {
     height: 3.5rem;
@@ -86,5 +85,28 @@ export const SecondaryButton = styled.button`
     margin-top: 1rem;
     margin-bottom: 1rem;
     text-align: center;
+  }
+`;
+
+export const PinkButton = styled.div`
+  height: 3.5rem;
+  border-radius: 4px;
+  border: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d74b83;
+  color: white;
+  padding: 1em;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 1.25px;
+  font-size: 1.125rem;
+  margin-bottom: 1em;
+  text-align: center;
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.9;
   }
 `;

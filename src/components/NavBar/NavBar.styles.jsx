@@ -25,7 +25,7 @@ export const Ul = styled.ul`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  flex:0.6;
+  flex: 0.6;
   flex-flow: row nowrap;
   z-index: 10;
   background-color: ${({ open, bgOut, bgIn, textOut, textIn }) => bgOut};
@@ -33,9 +33,13 @@ export const Ul = styled.ul`
   li {
     font-weight: 700;
     background-color: ${({ open, bgOut, bgIn, textOut, textIn }) => bgOut};
-    color:white;
+    color: white;
 
     color: ${({ open, bgOut, bgIn, textOut, textIn }) => textOut};
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   li:nth-child(6) {
@@ -52,7 +56,7 @@ export const Ul = styled.ul`
   @media (max-width: 910px) and (min-width: 768px) {
     li {
       background-color: ${({ open, bgOut, bgIn, textOut, textIn }) => bgOut};
-      
+
       font-size: 0.9em;
     }
 

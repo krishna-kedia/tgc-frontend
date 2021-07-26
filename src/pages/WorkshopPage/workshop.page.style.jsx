@@ -80,10 +80,9 @@ export const CardsDiv = styled.div`
 `;
 
 export const ShowMoreButton = styled.button`
-  display: inline-block;
-  border: 1px black solid;
+  border: none;
   border-radius: 9px;
-  padding: 1rem 1rem;
+  padding: 0.5em 0.5em;
   margin: 1rem 0 0 70vw;
   text-decoration: none;
   color: grey;
