@@ -46,7 +46,7 @@ class Donate extends React.Component {
                     <Alignment>
                       <ShadowButton
                         Text={"Donate"}
-                        width="20vw"
+                        width="30vw"
                         onClick={this.toggleShowDetails}
                       />
                     </Alignment>

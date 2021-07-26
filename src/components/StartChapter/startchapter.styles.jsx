@@ -7,10 +7,9 @@ export const BoxText = styled.p`
   font-size: 1.5rem;
   text-align: left;
   width: 80%;
-  @media screen and (min-width: 767px) {
+  @media screen and (max-width: 767px) {
     text-align: center;
-    font-size: 1.25rem;
-    padding: 0 2rem 2rem 2rem;
+    font-size: 1rem;
   }
 `;
 
@@ -108,5 +107,9 @@ export const PinkButton = styled.div`
 
   &:hover {
     opacity: 0.9;
+  }
+  @media screen and (max-width: 560px) {
+    width: 80%;
+    align-items: center;
   }
 `;

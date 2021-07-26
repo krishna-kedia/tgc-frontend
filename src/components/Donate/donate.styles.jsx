@@ -23,6 +23,7 @@ export const Title = styled.h2`
 
   @media screen and (max-width: 786px) {
    text-align:center;
+   font-size: 1.5em;
   }
 `;
 export const Content = styled.p`
@@ -34,5 +35,6 @@ export const Content = styled.p`
   }
   @media screen and (max-width: 786px) {
     text-align: center;
+    font-size: 0.9em;
   }
 `;

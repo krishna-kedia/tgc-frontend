@@ -36,6 +36,7 @@ import StartChapter from "../../components/StartChapter/startchapter.component";
 import Donate from "../../components/Donate/donate.component";
 import Headingg from "../../components/Heading/heading.component";
 import Footer from "../../components/Footer/footer.component";
+import { DonateBg } from "../ChapterPage/chapter.styles";
 
 const Header = () => {
   return (
@@ -53,10 +54,10 @@ const Header = () => {
           Inspiring girls to discover and pursue programming
         </SubHeading>
         <ButtonsDiv>
-          <Link to="/joinus" style={{ textDecoration: "none", width: "30%" }}>
+          <Link to="/joinus" style={{ textDecoration: "none"}}>
             <OutlineButton>JOIN US</OutlineButton>
           </Link>
-          <Link style={{ textDecoration: "none", width: "30%" }}>
+          <Link style={{ textDecoration: "none" }}>
             <OutlineButton
               onClick={() => {
                 scroller.scrollTo("stats");
@@ -114,6 +115,7 @@ const Home = () => {
       />
 
       <Corousel>
+      <Headingg heading={"IMAGE GALLERY"} />
         <ImageCorousel
           imgUrls={[
             "https://i.imgur.com/RyYGlc8.jpg",
@@ -174,7 +176,9 @@ const Home = () => {
         <Headingg heading={"Start A Chapter"} />
         <StartChapter />
       </StartAChapterDiv>
+      <DonateBg>
       <Donate />
+      </DonateBg>
       <Footer />
     </div>
   );

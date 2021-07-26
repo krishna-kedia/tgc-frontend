@@ -8,6 +8,7 @@ export const MainHeading = styled.p`
   color: #f05680;
   @media screen and (max-width: 600px) {
     text-align: center;
+    font-size: 2.5rem;
   }
 `;
 
@@ -21,6 +22,9 @@ export const HeaderText = styled.p`
 
 export const PinkBoxDiv = styled.div`
   margin: 3rem 6rem;
+  @media screen and (max-width: 768px) {
+    margin: 0.8rem;
+  }
 `;
 
 export const ImageBox = styled.div`

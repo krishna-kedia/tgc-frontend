@@ -122,7 +122,7 @@ class StartChapter extends Component {
           in tech one workshop at a time. Start a chapter in your city.
         </BoxText>
 
-        <Link to="/joinus" style={{ textDecoration: "none" }}>
+        <Link to="/joinus" style={{ textDecoration: "none", display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
           <PinkButton>Become a Chapter Member</PinkButton>
         </Link>
         {/* <Input

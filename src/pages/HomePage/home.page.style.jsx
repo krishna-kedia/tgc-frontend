@@ -30,6 +30,8 @@ export const Heading = styled.p`
   color: #fff;
   text-align: center;
   @media screen and (max-width: 720px) {
+    font-size: 2em;
+
   }
 `;
 
@@ -39,6 +41,7 @@ export const SubHeading = styled.p`
   text-align: center;
   @media screen and (max-width: 720px) {
     flex-direction: column;
+    font-size: 1.3em;
   }
 `;
 
@@ -49,7 +52,8 @@ export const ButtonsDiv = styled.div`
   justify-content: space-evenly;
   @media screen and (max-width: 992px) {
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -57,7 +61,7 @@ export const OutlineButton = styled.div`
   color: white;
   border: 2px white solid;
   border-radius: 5px;
-  width: 100%;
+  width: 10em;
   padding: 0.5em;
   display: flex;
   flex-direction: column;
@@ -73,8 +77,9 @@ export const OutlineButton = styled.div`
   }
 
   @media screen and (max-width: 992px) {
-    width: 100%;
-    margin-top: 1em;
+    width: 10em;
+    margin: 0.8em 0;
+
   }
 `;
 
@@ -130,10 +135,14 @@ export const StartAChapterDiv = styled.div`
   background-color: #fbedf3;
   padding: 3rem 0 0 0;
   text-align: center;
+  @media (max-width: 768px) {
+    margin: 2rem 0;
+  }
 `;
 
 export const Corousel = styled.div`
   margin: 2rem 0 6rem 0;
   background-color: #fbedf3;
   padding: 3rem 0;
+  text-align: center;
 `;
