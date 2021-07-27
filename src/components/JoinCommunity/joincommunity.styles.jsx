@@ -2,21 +2,22 @@ import styled from "styled-components";
 
 export const Background = styled.div`
   margin-top: 3rem;
-  padding: 2em 0;
+  padding-top: 2em;
   background-color: rgba(215, 75, 131, 0.1);
   text-align: center;
-   display: flex;
-   flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const TextBox = styled.p`
   font-family: "Inter", sans-serif;
-  font-size: 1.3rem;
-  margin-top: 2rem;
-  padding: 2rem 3rem ;
+  font-size: 1.2em;
+  margin-top: 1em;
+  padding: 0em 3em;
   @media screen and (max-width: 600px) {
-    font-size: 1.5rem;
-    padding: 0 0.8rem;
+    font-size: 1em;
+    padding: 0 2em;
   }
 `;
 
@@ -38,8 +39,7 @@ export const Input = styled.input`
   }
 `;
 export const ImageBox = styled.div`
-  width: 6rem;
-  height: 6rem;
+  width: 100%;
   padding-top: 3rem;
   //margin-left: 0.5rem;
 `;
@@ -61,14 +61,10 @@ export const FormLabel = styled.p`
   text-transform: uppercase;
 `;
 
-export const Button = styled.button`
-  background-color: #f05680;
-  color: #fff;
-  font-weight: 800;
-  padding: 8px 30px !important;
-  border-radius: 2px;
-  border-color: transparent;
-  :hover {
-    background-color: #ee1e6d;
+export const ButtonDiv = styled.div`
+  width: 30%;
+
+  @media screen and (max-width: 768px) {
+    width: 60%;
   }
 `;

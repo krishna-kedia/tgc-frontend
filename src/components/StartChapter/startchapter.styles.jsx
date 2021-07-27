@@ -53,7 +53,7 @@ export const Button = styled.button`
 
 export const BoxImage = styled.div`
   display: inline-block;
-  width: 100%;
+  width: 80%;
   @media screen and (max-width: 560px) {
     width: 100%;
   }
@@ -101,7 +101,7 @@ export const PinkButton = styled.div`
   font-weight: bolder;
   letter-spacing: 1.25px;
   font-size: 1.125rem;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   text-align: center;
   transition: all 0.2s;
 
@@ -111,5 +111,14 @@ export const PinkButton = styled.div`
   @media screen and (max-width: 560px) {
     width: 80%;
     align-items: center;
+  }
+`;
+
+export const ButtonDiv = styled.div`
+  width: 30%;
+  margin-bottom: 2em;
+
+  @media screen and (max-width: 768px) {
+    width: 60%;
   }
 `;

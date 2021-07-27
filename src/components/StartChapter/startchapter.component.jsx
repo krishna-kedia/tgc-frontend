@@ -10,12 +10,14 @@ import {
   Logo,
   SecondaryButton,
   PinkButton,
+  ButtonDiv,
 } from "./startchapter.styles";
 import Heading from "../Heading/heading.component";
 import { Container, Image } from "react-bootstrap";
 import logo from "../../assets/plus.png";
 import { Link } from "react-router-dom";
 import map from "../../assets/map2.png";
+import ShadowButton from "../Button/button.component";
 
 class StartChapter extends Component {
   state = {
@@ -122,9 +124,13 @@ class StartChapter extends Component {
           in tech one workshop at a time. Start a chapter in your city.
         </BoxText>
 
-        <Link to="/joinus" style={{ textDecoration: "none", display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-          <PinkButton>Become a Chapter Member</PinkButton>
-        </Link>
+        <ButtonDiv>
+          <ShadowButton
+            Text={"Apply Now"}
+            width="100%"
+            link="https://docs.google.com/forms/u/3/d/e/1FAIpQLSeqIjXp77VuEHqxevq3hdw_myuCVzYGJsKzFNpdWYwHKbNI-Q/viewform"
+          />
+        </ButtonDiv>
         {/* <Input
           placeholder="Find Chapters Near You"
           onChange={this.handleChange}

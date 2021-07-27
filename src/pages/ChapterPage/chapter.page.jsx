@@ -25,37 +25,7 @@ import {
   HeaderInfo,
 } from "./chapter.styles";
 import { CardsDiv, ShowMoreButton } from "../WorkshopPage/workshop.page.style";
-
-const Header = () => {
-  return (
-    <HeaderBg>
-      <div style={{ flex: 0.5, display: "flex", justifyContent: "center" }}>
-        <HeaderImg src={ChapterHeaderImg} />
-      </div>
-
-      <HeaderInfo>
-        <ChapterHeading>Chapters</ChapterHeading>
-        <div
-          style={{
-            width: "60%",
-            display: "flex",
-            flexDirection: "column",
-            marginTop: "1em",
-          }}
-        >
-          {/* <ShadowButton
-            Text={"CONTACT US"}
-            link="writetothegirlcode@gmail.com"
-          /> */}
-          <ShadowButton
-            Text={"START A CHAPTER"}
-            link="https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform"
-          />
-        </div>
-      </HeaderInfo>
-    </HeaderBg>
-  );
-};
+import PageHeader from "../../components/PageHeader/Header.component";
 
 class Chapter extends Component {
   state = {
@@ -125,9 +95,19 @@ class Chapter extends Component {
           textOut="#F05680"
           textIn="white"
         />
-        <HeaderBg>
-          <Header />
-        </HeaderBg>
+
+        <PageHeader
+          img={ChapterHeaderImg}
+          title="Chapters"
+          subtitle="Locations of TGC around the world! Start a chapter to bring TGC to your city!"
+          buttons={[
+            {
+              text: "START A CHAPTER",
+              link: "https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform",
+            },
+          ]}
+          imgWidth="70%"
+        />
 
         <Stats
           stats={[
