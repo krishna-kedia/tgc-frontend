@@ -119,9 +119,9 @@ class StartChapter extends Component {
       >
         <Heading heading={this.props.heading} />
         <BoxText>
-          Search for your city on the map below. If we don’t have a chapter you
-          can join in that city, start your own! Help us bridge the gender gap
-          in tech one workshop at a time. Start a chapter in your city.
+          Help us bridge the gender gap in tech one free workshop at a time.
+          Establish your own chapter and work towards making an impact with us.
+          Start a chapter in your city today.
         </BoxText>
 
         <ButtonDiv>

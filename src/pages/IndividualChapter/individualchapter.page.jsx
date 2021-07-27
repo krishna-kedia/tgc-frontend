@@ -189,7 +189,7 @@ class IndividualChapter extends React.Component {
             )}
             {!loading ? (
               <ShowMoreButton onClick={this.toggleShow}>
-                {buttonText} {">"}
+                {buttonText}
               </ShowMoreButton>
             ) : (
               " "
@@ -218,7 +218,7 @@ class IndividualChapter extends React.Component {
             }
           />
         </TeamDiv>
-        <OtherChapters>
+        <PastWorkshopsDiv>
           <Heading heading={"OTHER CHAPTERS"} />
           <CardBg>
             <Card
@@ -241,7 +241,7 @@ class IndividualChapter extends React.Component {
               isButton={true}
             />
           </CardBg>
-        </OtherChapters>
+        </PastWorkshopsDiv>
         <DonateBg>
           <Donate />
         </DonateBg>

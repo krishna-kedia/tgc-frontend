@@ -46,11 +46,19 @@ export const ImgCarouselStyle = styled.div`
   padding-bottom: 4rem;
 `;
 export const CardBg = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 2vh 0 2vh 0;
+  background-color: white;
+  text-align: center;
+  padding-top: 4rem;
+  text-align: center;
+  @media screen and (max-width: 500px) {
+    padding: 1em;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 4rem 4rem;
+  }
+  @media screen and (min-width: 1500px) {
+    padding: 4rem 15rem;
+  }
 `;
 
 export const DonateBg = styled.div`

@@ -74,7 +74,7 @@ class IndWorkshop extends React.Component {
           imgWidth="90%"
           buttons={[
             {
-              text: "Become a chapter member",
+              text: "BECOME A CHAPTER MEMBER",
               link: "https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform",
             },
           ]}

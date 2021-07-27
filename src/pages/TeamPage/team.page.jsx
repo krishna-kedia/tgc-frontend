@@ -63,7 +63,7 @@ export default class Home extends Component {
               img={team}
               title="Our Team"
               imgWidth="90%"
-              subtitle="A line here about the team!"
+              subtitle="Team work makes the dreamwork!"
               buttons={[
                 { text: "INTERN WITH US" },
                 { text: "START A CHAPTER" },

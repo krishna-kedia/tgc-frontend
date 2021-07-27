@@ -43,7 +43,7 @@ const JoinUs = () => {
         bgOut="transparent"
         bgIn="#F05680"
         textOut="#F05680"
-        textIn="#F05680"
+        textIn="white"
       />
 
       <PageHeader
@@ -64,6 +64,7 @@ const JoinUs = () => {
             link: "https://docs.google.com/forms/u/3/d/e/1FAIpQLSeqIjXp77VuEHqxevq3hdw_myuCVzYGJsKzFNpdWYwHKbNI-Q/viewform",
           },
         ]}
+        imgWidth="90%"
       />
 
       <PinkDiv>

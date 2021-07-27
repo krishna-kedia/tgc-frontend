@@ -23,7 +23,7 @@ export const HeaderText = styled.p`
 export const PinkBoxDiv = styled.div`
   margin: 3rem 6rem;
   @media screen and (max-width: 768px) {
-    margin: 0.8rem;
+    margin: 0.8rem 0em;
   }
 `;
 
@@ -50,7 +50,7 @@ export const PastWorkshopsDiv = styled.div`
   padding-top: 4rem;
   text-align: center;
   @media screen and (max-width: 500px) {
-    margin: 0;
+    padding: 1em;
   }
   @media screen and (min-width: 1200px) {
     padding: 4rem 4rem;
@@ -87,7 +87,7 @@ export const ShowMoreButton = styled.button`
   border: none;
   border-radius: 9px;
   padding: 0.5em 0.5em;
-  margin: 1rem 0 0 70vw;
+  margin: 1em;
   text-decoration: none;
   color: grey;
   background: none;
@@ -95,7 +95,6 @@ export const ShowMoreButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 `;
