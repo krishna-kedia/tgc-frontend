@@ -68,11 +68,28 @@ export const PastWorkshopsDiv = styled.div`
   }
 `;
 
+export const OtherChaptersDiv = styled.div`
+  background-color: #fbedf3;
+  text-align: center;
+  padding-top: 4rem;
+  text-align: center;
+  @media screen and (max-width: 500px) {
+    padding: 1em;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 4rem 4rem;
+  }
+  @media screen and (min-width: 1500px) {
+    padding: 4rem 15rem;
+  }
+`;
+
 export const OtherChapterContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0em 1em;
   justify-content: space-between;
+  background-color: #fbedf3;
   @media screen and (max-width: 768px){
     display: flex;
     flex-direction: column;

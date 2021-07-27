@@ -34,6 +34,7 @@ import {
   TeamDiv,
   ButtonDiv,
   OtherChapterContainer,
+  OtherChaptersDiv,
 } from "./individualchapter.page.styles";
 import {
   CardsDiv,
@@ -53,9 +54,10 @@ class IndividualChapter extends React.Component {
     expanded: false,
     buttonText: "See More Workshops",
     myRef: React.createRef(),
-    teamLead: [],
+    teamLead: {},
     membersInfo: [],
     carouselImages: [],
+    team: []
   };
 
   componentDidMount() {
@@ -85,16 +87,19 @@ class IndividualChapter extends React.Component {
   };
 
   manageTeam = () => {
+    console.log('manage team')
     let team = this.state.team;
     let members = [];
     team.map((member) => {
       if (member.designation == "CHAPTER LEAD") {
         this.state.teamLead = member;
+        console.log('if else')
       } else {
+        console.log('else')
         members.push([member.image, member.name]);
         this.setState({
           membersInfo: members,
-        });
+        }, console.log(this.state));
       }
     });
   };
@@ -127,7 +132,14 @@ class IndividualChapter extends React.Component {
   render() {
     const { chapterInfo, loading, buttonText, workshops, team } = this.state;
     let joinText = `Join ${this.state.chapterInfo.chapterName}`;
-
+    console.log(this.state.teamLead, this.state)
+    let lead
+    this.state.team.map((t) => {
+      if(t.designation = 'CHAPTER LEAD'){
+        //console.log(t)
+        lead = t
+      }
+    })
     return (
       <div>
         <GlobalStyle />
@@ -197,29 +209,22 @@ class IndividualChapter extends React.Component {
             )}
           </CardBg>
         </PastWorkshopsDiv>
-        <TeamDiv>
+        {/* <TeamDiv>
           <Team
             heading="TEAM"
             leads={[
               [
-                // "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-                // "Mushroom boss",
-                // "Head Of Fungi Development",
                 this.state.teamLead.image,
                 this.state.teamLead.name,
                 this.state.teamLead.designation,
               ],
             ]}
             mems={
-              // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
-              // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
-              // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
-              // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
               this.state.membersInfo
             }
           />
-        </TeamDiv>
-        <PastWorkshopsDiv>
+        </TeamDiv> */}
+        <OtherChaptersDiv>
           <Heading heading={"OTHER CHAPTERS"} />
           <OtherChapterContainer>
             <Card
@@ -242,7 +247,7 @@ class IndividualChapter extends React.Component {
               isButton={true}
             />
           </OtherChapterContainer>
-        </PastWorkshopsDiv>
+        </OtherChaptersDiv>
         <DonateBg>
           <Donate />
         </DonateBg>

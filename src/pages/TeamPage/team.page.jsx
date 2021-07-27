@@ -92,10 +92,10 @@ export default class Home extends Component {
             </div>
 
             <Directors
-              imgUrlOne={this.state.team.org[3]}
-              nameOne={this.state.team.org[2]}
-              imgUrlTwo={this.state.team.org[1]}
-              nameTwo={this.state.team.org[0]}
+              imgUrlOne={this.state.team.org[1]}
+              nameOne={this.state.team.org[0]}
+              imgUrlTwo={this.state.team.org[3]}
+              nameTwo={this.state.team.org[2]}
             />
 
             <PinkTextBoxDiv>
