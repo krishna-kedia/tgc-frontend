@@ -79,7 +79,7 @@ export const OutlineButton = styled.div`
 `;
 
 export const PinkTextBoxDiv = styled.div`
-  margin: 5em 3em;
+  margin: 3em 3em;
   @media screen and (max-width: 768px) {
     margin: 5em 0;
   }

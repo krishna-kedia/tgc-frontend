@@ -41,26 +41,25 @@ class Workshop extends React.Component {
   };
 
   fetchData = async () => {
-    let workshops = await fetch('http://143.110.253.103:5000/api/workshops')
-    workshops = await workshops.json()
-   
+    let workshops = await fetch("http://143.110.253.103:5000/api/workshops");
+    workshops = await workshops.json();
+
     this.setState({
       pastWorkshopsData: workshops.workshops,
       loading: false,
       stat1: workshops.stat1,
-      stat2: workshops.stat2
-    })
+      stat2: workshops.stat2,
+    });
   };
 
   componentDidMount() {
     this.fetchData();
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
 
   click = (e) => {
-   
-    this.props.history.push(`/workshop/${e.target.dataset.id}`)
-  }
+    this.props.history.push(`/workshop/${e.target.dataset.id}`);
+  };
 
   toggleShow = () => {
     if (this.state.expanded === false) {
@@ -80,13 +79,9 @@ class Workshop extends React.Component {
   };
 
   render() {
-    const {
-      pastWorkshopsData,
-      upcomingWorkshopsData,
-      loading,
-      buttonText,
-    } = this.state;
-   
+    const { pastWorkshopsData, upcomingWorkshopsData, loading, buttonText } =
+      this.state;
+
     return (
       <>
         <GlobalStyle />
@@ -104,7 +99,10 @@ class Workshop extends React.Component {
             <Col md={5} className="text-center">
               <MainHeading>Our Workshops </MainHeading>
               <HeaderText>We host free coding workshops!</HeaderText>
-              <ShadowButton Text={"CONDUCT A WORKSHOP"} />
+              <ShadowButton
+                Text={"CONDUCT A WORKSHOP"}
+                link="https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform"
+              />
             </Col>
           </Row>
         </Container>
@@ -164,7 +162,7 @@ class Workshop extends React.Component {
                 .slice(0, this.state.pastWorkshopItems)
                 .map((card) => (
                   <Card
-                  onClick={this.click}
+                    onClick={this.click}
                     key={card._id}
                     image={card.image}
                     //icons={card.courseIcon}
@@ -173,27 +171,29 @@ class Workshop extends React.Component {
                     subtitle={card.dates}
                     icon={card.courseIcon}
                     iconText={card.courseName}
-                    height = '100vh'
+                    height="100vh"
                     description={card.description}
-                    isButton='hi'
+                    isButton="hi"
                   />
                 ))}
             </CardsDiv>
           )}
           {!loading ? (
             <ShowMoreButton onClick={this.toggleShow}>
-              {buttonText} {">"}
+              {buttonText}
             </ShowMoreButton>
           ) : (
             " "
           )}
         </PastWorkshopsDiv>
 
-        <StartChapterSection style={{backgroundColor: "#FBEDF3", padding: '2.5em 0'}}>
+        <StartChapterSection
+          style={{ backgroundColor: "#FBEDF3", padding: "2.5em 0" }}
+        >
           <Heading heading={"Start a chapter"} />
           <StartChapter />
         </StartChapterSection>
-          <Donate />
+        <Donate />
         <Footer />
       </>
     );
