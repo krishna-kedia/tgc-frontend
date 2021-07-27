@@ -17,7 +17,7 @@ import Chapter from "./pages/ChapterPage/chapter.page";
 import IndWorkshop from "./pages/IndWorkshopPage/IndWorkshop.page";
 import BuildPrevious from "./pages/Build/build.notactive.component";
 import BuildActive from "./pages/Build/build.active.component";
-import './App.css'
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -32,7 +32,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/chapter" component={Chapter} />
         <Route exact path="/workshop/:workshopId" component={IndWorkshop} />
-        <Route exact path="/buildnotactive" component={BuildPrevious} />
+        {/* <Route exact path="/buildnotactive" component={BuildPrevious} /> */}
         <Route exact path="/build" component={BuildActive} />
       </Router>
     );

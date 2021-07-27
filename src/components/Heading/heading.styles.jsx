@@ -6,17 +6,17 @@ export const Title = styled.div`
   color: #d74b8d;
   font-weight: 800;
   font-size: 30px;
-  text-align:center;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
   line-height: 2.5rem;
   border-bottom: 5px dashed #785189;
   text-decoration: none;
   @media screen and (max-width: 992px) {
-    font-size: 1.9rem;
+    font-size: 1.5em;
   }
 
   @media screen and (min-width: 515px) {
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.5 em;
   }
 `;

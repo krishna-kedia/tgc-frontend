@@ -6,7 +6,7 @@ import Heading from "../Heading/heading.component";
 
 export default function TextCard({ heading, content }) {
   const listItems = content.map((item) => (
-    <Col lg={3} md={6} sm={12} xs={12}>
+    <Col lg={3} md={6} sm={12} xs={12} style={{ marginBottom: "1em" }}>
       <Container>
         <Image
           src={item[2]}

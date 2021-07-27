@@ -20,6 +20,7 @@ import Card from "../../components/Card/card.component";
 import PinkTextBox from "../../components/PinkTextBox/pinktextbox.component";
 import WorkshopsImage from "../../assets/WorkshopsImage.jpg";
 import WorkshopsHeader from "../../assets/WorkshopsHeader.jpg";
+import WorkshopTable from "../../assets/workshop.png";
 import StartChapter from "../../components/StartChapter/startchapter.component";
 import Donate from "../../components/Donate/donate.component";
 import Stats from "../../components/Stats/stats.component";
@@ -95,16 +96,16 @@ class Workshop extends React.Component {
         />
 
         <PageHeader
-          img={WorkshopsHeader}
+          img={WorkshopTable}
           title="Our Workshops"
           subtitle="We host free coding workshops!"
           buttons={[
             {
-              text: "Become a chapter member",
+              text: "BECOME A CHAPTER MEMBER",
               link: "https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform",
             },
           ]}
-          imgWidth="100%"
+          imgWidth="80%"
         />
 
         <Container className="my-4">

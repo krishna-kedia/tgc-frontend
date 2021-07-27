@@ -63,11 +63,20 @@ export default class Home extends Component {
               img={team}
               title="Our Team"
               imgWidth="90%"
-              subtitle="Team work makes the dreamwork!"
+              subtitle="Teamwork makes the dreamwork!"
               buttons={[
-                { text: "INTERN WITH US" },
-                { text: "START A CHAPTER" },
-                { text: "JOIN OUR COMMUNITY" },
+                {
+                  text: "INTERN WITH US",
+                  link: "https://docs.google.com/forms/d/e/1FAIpQLSdNnrbYFbdkTMnlod-Pp74KRPLipqN2RHmT1gwDoudFcxbG9Q/viewform",
+                },
+                {
+                  text: "JOIN/START A CHAPTER",
+                  link: "https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform",
+                },
+                {
+                  text: "JOIN OUR COMMUNITY",
+                  link: "https://docs.google.com/forms/u/3/d/e/1FAIpQLSeqIjXp77VuEHqxevq3hdw_myuCVzYGJsKzFNpdWYwHKbNI-Q/viewform",
+                },
               ]}
             />
 
@@ -90,8 +99,11 @@ export default class Home extends Component {
 
             <PinkTextBoxDiv>
               <PinkTextBox
-                heading="Our Story"
-                text="At The Girl Code, we aim to bridge the gender gap in the tech community by inspiring young girls to learn programming by hosting workshops at schools and universities local to them. Through our platform and intuitive curriculum, we plan to give rise to a new generation of female programmers set to take the world by storm."
+                heading="OUR STORY"
+                text="The Girl Code was established by two 16 year old high school students, 
+                Japnit and Samriddhi, when they were confronted by the stark gender disparity in 
+                their CS classes. Over the past 3 years, TGC has grown from excited conversations 
+                over lunch break, to an organization of over 80 members across 3 countries."
               />
             </PinkTextBoxDiv>
 

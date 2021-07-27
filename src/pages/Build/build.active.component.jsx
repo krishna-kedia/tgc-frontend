@@ -31,7 +31,10 @@ import ShadowButton from "../../components/Button/button.component";
 import { PinkTextBoxDiv } from "../HomePage/home.page.style";
 import { AcknowledgementBg } from "../IndWorkshopPage/IndWorkshop.styles";
 import Acknowledgement from "../../components/Acknowledgement/acknowledgement.component";
-import poster from './../../assets/poster.jpeg'
+import poster from "./../../assets/build.png";
+import PageHeader from "../../components/PageHeader/Header.component";
+import { DonateBg } from "../ChapterPage/chapter.styles";
+import IndWorkshopImg from "../../assets/IndWorkshop/IndWorkshopImg.jpg";
 
 class BuildActive extends Component {
   state = {};
@@ -72,23 +75,23 @@ class BuildActive extends Component {
           bgOut="transparent"
           bgIn="#F05680"
           textOut="#F05680"
-          textIn="#F05680"
+          textIn="white"
         />
-        {/* <Container style={{ paddingTop: "6rem" }}>
-          <Row>
-          <Col md={6}>
-              <Image src={build} alt="Join Us" fluid />
-            </Col>
-            <Col md={5}>
-              <MainHeading>BUILD 3.0</MainHeading>
-              <HeaderText>It's bigger. It's better. It's back</HeaderText>
-              <ShadowButton Text={'Register'} />
-            </Col>
-            <Col xs={0} md={1} />
-           
-          </Row>
-        </Container> */}
-        <div
+
+        <PageHeader
+          img={IndWorkshopImg}
+          title="BUILD 3.0"
+          subtitle="It's bigger. It's better. It's back"
+          imgWidth="100%"
+          buttons={[
+            {
+              text: "REGISTER NOW",
+              link: "https://docs.google.com/forms/d/e/1FAIpQLSff45YxaIYoqpu3Sc_s6M115moPKG0SL0NSI0a6nHFIIdXWjQ/viewform",
+            },
+          ]}
+        />
+
+        {/* <div
           style={{
             padding: "2rem 0",
             display: "flex",
@@ -109,7 +112,7 @@ class BuildActive extends Component {
               />
             </div>
           </div>
-        </div>
+        </div> */}
         {/* <StatsBg>
           <Stats
             stats={[
@@ -125,7 +128,9 @@ class BuildActive extends Component {
             style={{ margin: "1em" }}
             heading={"WHAT IS BUILD"}
             text={
-              "Over the summer of 2020, TGC hosted #Build, a project-oriented summer boot camp aimed at teaching students Python. Conducted in both Hindi and English, #Build 1.0 was a success, which led to the creation of #Build 2.0. The first iteration of #Build culminated in an end project- a blog (using HTML and CSS), and the second had a game (using Python and Pygame) to provide the participants a sense of achievement. Over 500 students participated in both the workshops."
+              "This year, #Build is back for a quick bootcamp on Python and Machine Learning!\
+              As always, Build is a fundraiser that aims to raise money to empower underprivileged girls to learn coding.\
+              Take this chance to redefine your ML and Data Science knowledge with a quick bootcamp! "
             }
           />
         </PinkTextBoxDiv>
@@ -160,19 +165,27 @@ class BuildActive extends Component {
                 fontSize: "2em",
               }}
             >
-              Part 1: Python Course
+              Part 1: Python Geared Towards ML
             </div>
 
             <h4>Dates: 5 - 10 August, 2021</h4>
             <p>Registration Open Till: 3 August, 2021</p>
+            <p>
+              <b>Minimum Donation: Rs 100</b>
+            </p>
             <h5>Topics Covered:</h5>
-              <div>Basics of Python</div>
-              <div>Basics of Python</div>
-            <p style={{padding: ' 2em 2em 0 2em'}}>
-            End Project: Making your own model using regression and classification algorithms. 
+            <div>Basics of Python </div>
+            <div>Conditional Statements and Loops </div>
+            <div> Functions</div>
+            <div> Lists</div>
+            <div> Numpy and Matplotlib </div>
+
+            <p style={{ padding: " 2em 2em 0 2em" }}>
+              End Project: Data exploration and visualisation with numpy and
+              matplotlib.
             </p>
           </CourseDiv>
-          <CourseDiv style={{border: 'none'}}>
+          <CourseDiv style={{ border: "none" }}>
             <div
               style={{
                 color: "#f05680",
@@ -182,18 +195,25 @@ class BuildActive extends Component {
             >
               Part 2: ML Course
             </div>
-            <h4>Dates: 5 - 10 August, 2021</h4>
-            <p>Registration Open Till: 8 August, 2021</p>
+            <h4>Dates: 12 - 16 August, 2021</h4>
+            <p>Registration Open Till: 9 August, 2021</p>
+            <p>Prequisite: Python knowledge or Build Python course</p>
+            <p>
+              <b>Minimum Donation: Rs 150</b>
+            </p>
             <h5>Topics Covered:</h5>
-              <div>Introduction to AI and ML</div>
-              <div>Preprocessing and Analysing data</div>
-            <p style={{padding: '2em 2em 0 2em'}}>
-            End Project: Making your own model using regression and classification algorithms. 
+            <div>Introduction to AI and ML</div>
+            <div>Preprocessing and Analysing data</div>
+            <div>Supervised Learning and Unsupervised Learning</div>
+            <div>Evaluation Pipeline and metrics</div>
+            <p style={{ padding: "2em 2em 0 2em" }}>
+              End Project: Making your own model using regression and
+              classification algorithms.
             </p>
           </CourseDiv>
         </CoursesContainer>
         <AcknowledgementBg>
-          <Acknowledgement heading="MORE INFO!" image={poster}/>
+          <Acknowledgement heading="MORE INFO!" image={poster} />
         </AcknowledgementBg>
         <HeadingStyleBuild>
           <Heading heading="FAQs" />
@@ -209,15 +229,15 @@ class BuildActive extends Component {
             What is build?
           </div>
           <p>
-            Every year, TGC hosts a month-long summer boot camp aka fundraiser
-            to empower girls and bring more of them into tech. These boot camps
-            are focussed towards Python, Data Science and Machine Learning. The
-            build is the brand name for our summer bootcamps and we have had 2
-            iterations of the same. #Build3.0 comes out on August 5th 2021.
-            Build always culminates into an end-project like a game or a blog,
-            so you can add your project into a resume for brownie points!
-            Certificates will be awarded to all those who successfully complete
-            their projects!
+            Every year, TGC hosts a month-long fundraising summer boot camp that
+            aims to raise money to empower underprivileged girls to learn
+            coding. This year, the bootcamp is focused towards Python, Data
+            Science and Machine Learning. “Build” is the brand name for our
+            summer bootcamp, and we’ve hosted 2 successful iterations it
+            (#Build, #Build2.0) #Build3.0 starts on August 5th 2021 and
+            culminates with an end-project like a game or a blog, so you can add
+            your project into your résumé for brownie points! Certificates will
+            be awarded to all those who successfully complete their projects.
           </p>
           <div
             style={{
@@ -238,12 +258,12 @@ class BuildActive extends Component {
             Is there a Fee To Attend?
           </div>
           <p>
-            We won’t call it a ‘nominal fee’ as much as we’d call it a donation.
-            It totally depends on you how much you’d like to donate.Through the
-            fundraiser The Girl Code is aiming to collect funds to teach
-            underprivileged girls. One can make a donation starting at Rs. 50/ $
-            1 to participate in the program. Feel free to donate more, the funds
-            all go into empowering girls!
+            We won’t call it a ‘nominal fee,’ but rather a donation. You can
+            donate as much (or as little) as you’d like! Through the fundraiser,
+            The Girl Code aims to raise money to empower underprivileged girls
+            to learn coding. You can make a donation starting at Rs. 100 for
+            Python and Rs. 150 for ML. Feel free to donate more, the funds all
+            go towards helping those who need it!
           </p>
           <div
             style={{
@@ -264,9 +284,23 @@ class BuildActive extends Component {
             How can I donate?
           </div>
           <p>
-            You can pay through Paytm or Google pay on '+91 9911822443'/through
-            Paypal or GrabPay on +65 96823656. Minimum donation for python: 150
-            Minimum donation for ML: 100 Both: 200
+            You can pay through:
+            <br />
+            <b>Paytm</b> on +91 9911822443 <br />
+            <b>Google Pay</b> on +91 9871332023 <br />{" "}
+            <b>GrabPay, Paylah or Paynow </b>
+            on +65 96823656 <br />
+            <br /> <b>Bank Details</b> <br /> Name: GIRLCODE HUMANITARIAN
+            FOUNDATION
+            <br />
+            Account Number: 920020071693298 <br />
+            IFSC code: UTIB0003204 <br />
+            Bank Name: Axis Bank, HAUZ KHAS II DEL DL
+            <br />
+            <br /> Minimum donation for python: Rs. 100 <br />
+            Minimum donation for ML: Rs. 150
+            <br />
+            Both: Rs. 200
           </p>
           <div
             style={{
@@ -289,8 +323,7 @@ class BuildActive extends Component {
           <p>
             #Build3.0 is open to all genders and ages! You also don’t require
             any programming experience or pre requisite knowledge. We will cater
-            to your needs individually! Courses will be held in both Hindi and
-            English!
+            to your needs individually! Courses will be held in simple English!
           </p>
         </div>
         {/* <StayInTouchBg>
@@ -342,9 +375,9 @@ class BuildActive extends Component {
         />
         </BuildCardBg>
         </PinkBigDiv> */}
-        <DonateSection>
+        <DonateBg>
           <Donate />
-        </DonateSection>
+        </DonateBg>
         <Footer />
       </>
     );
