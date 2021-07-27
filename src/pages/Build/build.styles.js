@@ -60,3 +60,32 @@ export const PinkBigDiv = styled.div`
 background-color:#FBEDF3;
 padding: 5vh 0;
 `;
+
+export const CoursesContainer = styled.div`
+  display: flex;
+  text-align: center;
+  padding: 2em 0;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+  }
+`
+
+export const CourseDiv = styled.div`
+  width: 50vw;
+  border-right: 1px solid black;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    width: 100%;
+  }
+`;
+
+export const HeadingStyleBuild = styled.div`
+text-align:center;
+margin-top:80px;
+@media screen and (max-width: 768px){
+  text-align: center;
+}
+`

@@ -183,7 +183,7 @@ class Workshop extends React.Component {
           )}
           {!loading ? (
             <ShowMoreButton onClick={this.toggleShow}>
-              {buttonText} {">"}
+              {buttonText} 
             </ShowMoreButton>
           ) : (
             " "

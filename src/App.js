@@ -17,6 +17,8 @@ import Chapter from "./pages/ChapterPage/chapter.page";
 import IndWorkshop from "./pages/IndWorkshopPage/IndWorkshop.page";
 import BuildPrevious from "./pages/Build/build.notactive.component";
 import BuildActive from "./pages/Build/build.active.component";
+import './App.css'
+
 class App extends Component {
   render() {
     return (

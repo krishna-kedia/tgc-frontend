@@ -16,6 +16,9 @@ import {
   BuildCardBg,
   TestimonialBg,
   PinkBigDiv,
+  CoursesContainer,
+  CourseDiv,
+  HeadingStyleBuild,
 } from "./build.styles";
 import Heading from "../../components/Heading/heading.component";
 import PinkTextBox from "../../components/PinkTextBox/pinktextbox.component";
@@ -26,6 +29,9 @@ import Card from "../../components/Card/card.component";
 import Testimonial from "../../components/Testimonial/testimonial.component";
 import ShadowButton from "../../components/Button/button.component";
 import { PinkTextBoxDiv } from "../HomePage/home.page.style";
+import { AcknowledgementBg } from "../IndWorkshopPage/IndWorkshop.styles";
+import Acknowledgement from "../../components/Acknowledgement/acknowledgement.component";
+import poster from './../../assets/poster.jpeg'
 
 class BuildActive extends Component {
   state = {};
@@ -145,8 +151,8 @@ class BuildActive extends Component {
         />
         
         </BuildCardBg> */}
-        <div style={{ display: "flex", textAlign: "center", padding: "2em 0" }}>
-          <div style={{ width: "50vw", borderRight: "1px solid black" }}>
+        <CoursesContainer>
+          <CourseDiv>
             <div
               style={{
                 color: "#f05680",
@@ -161,12 +167,12 @@ class BuildActive extends Component {
             <p>Registration Open Till: 3 August, 2021</p>
             <h5>Topics Covered:</h5>
               <div>Basics of Python</div>
-            
-            <p style={{padding: ' 3.5em 2em 0 2em'}}>
+              <div>Basics of Python</div>
+            <p style={{padding: ' 2em 2em 0 2em'}}>
             End Project: Making your own model using regression and classification algorithms. 
             </p>
-          </div>
-          <div style={{ width: "50vw" }}>
+          </CourseDiv>
+          <CourseDiv style={{border: 'none'}}>
             <div
               style={{
                 color: "#f05680",
@@ -181,16 +187,17 @@ class BuildActive extends Component {
             <h5>Topics Covered:</h5>
               <div>Introduction to AI and ML</div>
               <div>Preprocessing and Analysing data</div>
-            
-            
             <p style={{padding: '2em 2em 0 2em'}}>
             End Project: Making your own model using regression and classification algorithms. 
             </p>
-          </div>
-        </div>
-        <HeadingStyle>
+          </CourseDiv>
+        </CoursesContainer>
+        <AcknowledgementBg>
+          <Acknowledgement heading="MORE INFO!" image={poster}/>
+        </AcknowledgementBg>
+        <HeadingStyleBuild>
           <Heading heading="FAQs" />
-        </HeadingStyle>
+        </HeadingStyleBuild>
         <div style={{ padding: "1em 4em" }}>
           <div
             style={{
