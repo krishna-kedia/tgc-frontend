@@ -26,6 +26,7 @@ import Stats from "../../components/Stats/stats.component";
 import Footer from "../../components/Footer/footer.component";
 import ShadowButton from "../../components/Button/button.component";
 import { DonateBg } from "../ChapterPage/chapter.styles";
+import PageHeader from "./../../components/PageHeader/Header.component";
 
 class Workshop extends React.Component {
   state = {
@@ -92,21 +93,20 @@ class Workshop extends React.Component {
           textOut="#F05680"
           textIn="white"
         />
-        <Container style={{ paddingTop: "5rem" }}>
-          <Row>
-            <Col md={7}>
-              <Image src={WorkshopsHeader} alt="Join Us" fluid />
-            </Col>
-            <Col md={5} className="text-center">
-              <MainHeading>Our Workshops </MainHeading>
-              <HeaderText>We host free coding workshops!</HeaderText>
-              <ShadowButton
-                Text={"CONDUCT A WORKSHOP"}
-                link="https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform"
-              />
-            </Col>
-          </Row>
-        </Container>
+
+        <PageHeader
+          img={WorkshopsHeader}
+          title="Our Workshops"
+          subtitle="We host free coding workshops!"
+          buttons={[
+            {
+              text: "Become a chapter member",
+              link: "https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform",
+            },
+          ]}
+          imgWidth="100%"
+        />
+
         <Container className="my-4">
           <Stats
             stats={[

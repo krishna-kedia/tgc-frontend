@@ -19,7 +19,7 @@ export const InternshipsSection = styled.div`
 
 export const PinkDiv = styled.div`
   margin: 0 6vw;
-`
+`;
 
 export const HeaderButtons = styled.div`
   display: flex;
@@ -44,4 +44,11 @@ export const HeaderText = styled.p`
   line-height: 33px;
   color: #f05680;
   padding: 1vh 0;
+`;
+
+export const ButtonDiv = styled.div`
+  width: 30%;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+  }
 `;

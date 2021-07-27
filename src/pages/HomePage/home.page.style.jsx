@@ -31,7 +31,6 @@ export const Heading = styled.p`
   text-align: center;
   @media screen and (max-width: 720px) {
     font-size: 2em;
-
   }
 `;
 
@@ -79,7 +78,6 @@ export const OutlineButton = styled.div`
   @media screen and (max-width: 992px) {
     width: 10em;
     margin: 0.8em 0;
-
   }
 `;
 
@@ -141,7 +139,7 @@ export const StartAChapterDiv = styled.div`
 `;
 
 export const Corousel = styled.div`
-  margin: 2rem 0 6rem 0;
+  margin: 3rem 0 3rem 0;
   background-color: #fbedf3;
   padding: 3rem 0;
   text-align: center;

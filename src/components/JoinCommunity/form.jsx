@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormLabel, Input, Button, FormBox } from "./joincommunity.styles";
+import { FormLabel, Input, FormBox } from "./joincommunity.styles";
 
 import { Row, Col, Form } from "react-bootstrap";
 
@@ -23,14 +23,13 @@ class form extends Component {
       gender,
       email,
     };
-   
   };
 
   render() {
     return (
       <Form style={{ textAlign: "left" }} onSubmit={this.handleSubmit}>
-        <Row style={{padding: '0'}}>
-          <Col style={{padding: '0'}}>
+        <Row style={{ padding: "0" }}>
+          <Col style={{ padding: "0" }}>
             <FormLabel>Name :</FormLabel>
             <Input
               name="name"
@@ -39,8 +38,8 @@ class form extends Component {
             />
           </Col>
         </Row>
-        <Row style={{padding: '0'}}>
-          <Col style={{padding: '0'}}>
+        <Row style={{ padding: "0" }}>
+          <Col style={{ padding: "0" }}>
             <FormLabel>Gender :</FormLabel>
 
             <Input name="gender" as="select" onChange={this.handleChange}>
@@ -51,8 +50,8 @@ class form extends Component {
             </Input>
           </Col>
         </Row>
-        <Row style={{padding: '0'}}>
-          <Col style={{padding: '0'}}>
+        <Row style={{ padding: "0" }}>
+          <Col style={{ padding: "0" }}>
             <FormLabel>Email :</FormLabel>
             <Input
               name="email"
@@ -61,9 +60,9 @@ class form extends Component {
             />
           </Col>
         </Row>
-        <Button type="submit" className="mt-2">
+        {/* <Button type="submit" className="mt-2">
           JOIN
-        </Button>
+        </Button> */}
       </Form>
     );
   }

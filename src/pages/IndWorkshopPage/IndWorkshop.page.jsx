@@ -15,18 +15,13 @@ import Acknowledgement from "../../components/Acknowledgement/acknowledgement.co
 import IndWorkshopImg from "../../assets/IndWorkshop/IndWorkshopImg.jpg";
 import {
   AcknowledgementBg,
-  HeaderBg,
-  WorkHeading,
-  SubHeading,
-  BoxStyle,
-  CardHeading,
-  CardBg,
-  ProjectShowcaseDiv,
-  HeaderIconImage
+  VerticalMargin,
+  HorizontalMargin,
+  Corousel,
 } from "./IndWorkshop.styles";
 import { ShowMoreButton } from "../WorkshopPage/workshop.page.style";
 import { DonateBg } from "../ChapterPage/chapter.styles";
-
+import PageHeader from "../../components/PageHeader/Header.component";
 
 class IndWorkshop extends React.Component {
   state = {
@@ -36,88 +31,86 @@ class IndWorkshop extends React.Component {
     expanded: false,
     buttonText: "See More Workshops",
     myRef: React.createRef(),
-    testimonials: []
-  }
-  componentDidMount(){
+    testimonials: [],
+  };
+  componentDidMount() {
     this.fetchData();
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
 
   fetchData = async () => {
-    const workshopId = this.props.match.params.workshopId
-   
-    let workshopData = await fetch(`http://143.110.253.103:5000/api/workshop/${workshopId}`)
-    workshopData = await workshopData.json()
-   
-    this.setState({
-      workshopInfo: workshopData.workshop,
-      loading: false,
-      testimonials: workshopData.testimonials
-    }, () => {
-     
-    })
+    const workshopId = this.props.match.params.workshopId;
 
+    let workshopData = await fetch(
+      `http://143.110.253.103:5000/api/workshop/${workshopId}`
+    );
+    workshopData = await workshopData.json();
 
-  }
+    this.setState(
+      {
+        workshopInfo: workshopData.workshop,
+        loading: false,
+        testimonials: workshopData.testimonials,
+      },
+      () => {}
+    );
+  };
   render() {
-    const {
-      workshopInfo
-    } = this.state
-   
+    const { workshopInfo } = this.state;
+
     return (
       <div>
         <NavBar
-        bgOut="transparent"
-        bgIn="#F05680"
-        textOut="#F05680"
-        textIn="white"
+          bgOut="transparent"
+          bgIn="#F05680"
+          textOut="#F05680"
+          textIn="white"
         />
-        <HeaderBg>
-        <Container fluid>
-      <Row>
-        <HeaderIconImage>
-          <Image style={{ paddingLeft: "1rem" }} src={IndWorkshopImg} fluid />
-        </HeaderIconImage>
-        <Col className="justify-content-center">
-          <WorkHeading>{workshopInfo.workshopName}</WorkHeading>
-          <SubHeading>{workshopInfo.dates}</SubHeading>
-        </Col>
-      </Row>
-    </Container>
-        </HeaderBg>
-        <Stats
-          stats={[
-            [workshopInfo.flagshipStatValue1, 'PARTICIPANTS'],
-            [workshopInfo.flagshipStatValue2, 'HOURS'],
-            [workshopInfo.flagshipStatValue3, 'DAYS'],
+
+        <PageHeader
+          img={IndWorkshopImg}
+          title={workshopInfo.workshopName}
+          subtitle={workshopInfo.dates}
+          imgWidth="90%"
+          buttons={[
+            {
+              text: "Become a chapter member",
+              link: "https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform",
+            },
           ]}
         />
-        <BoxStyle>
-          <PinkTextBox
-            heading="MISSION"
-            text={workshopInfo.description}/>
-        </BoxStyle>
 
-        {
-          this.state.loading? null : (
-            <BoxStyle>
-            <ImageCorousel
-            imgUrls={this.state.workshopInfo.carouselImages}
+        <VerticalMargin>
+          <Stats
+            stats={[
+              [workshopInfo.flagshipStatValue1, "PARTICIPANTS"],
+              [workshopInfo.flagshipStatValue2, "HOURS"],
+              [workshopInfo.flagshipStatValue3, "DAYS"],
+            ]}
           />
-          </BoxStyle>
-          )
-        }
-       {workshopInfo.LOR ? (
+        </VerticalMargin>
+
+        <HorizontalMargin mobileMargin="0">
+          <PinkTextBox heading="WORKSHOP" text={workshopInfo.description} />
+        </HorizontalMargin>
+
+        {this.state.loading ? null : (
+          <Corousel>
+            <Heading heading={"IMAGE GALLERY"} />
+            <ImageCorousel imgUrls={this.state.workshopInfo.carouselImages} />
+          </Corousel>
+        )}
+        {workshopInfo.LOR ? (
           <AcknowledgementBg>
-          <Acknowledgement heading="LOR" image={workshopInfo.LOR}/>
-        </AcknowledgementBg>
-       ): null}
-       <DonateBg>
-        <Donate
-          button="DONATE NOW"
-          title="Help support The Girl Code"
-          content="At The Girl Code, we aim to bridge the gender gap in the tech community by inspiring young girls to learn programming by hosting workshops."
-        />
+            <Acknowledgement heading="LOR" image={workshopInfo.LOR} />
+          </AcknowledgementBg>
+        ) : null}
+        <DonateBg>
+          <Donate
+            button="DONATE NOW"
+            title="Help support The Girl Code"
+            content="At The Girl Code, we aim to bridge the gender gap in the tech community by inspiring young girls to learn programming by hosting workshops."
+          />
         </DonateBg>
         <Footer />
       </div>

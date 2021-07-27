@@ -21,7 +21,7 @@ import Footer from "../../components/Footer/footer.component";
 import ImageCorousel from "../../components/ImageCorousel/imagecorousel.component";
 
 import superhero from "../../assets/homepage/Superhero.jpg";
-import indchapter from '../../assets/IndChapter/indchapter.png'
+import indchapter from "../../assets/IndChapter/indchapter.png";
 
 import {
   StyledJumbo,
@@ -32,12 +32,16 @@ import {
   Corousel,
   OtherChapters,
   TeamDiv,
-  ButtonDiv
+  ButtonDiv,
 } from "./individualchapter.page.styles";
-import { CardsDiv,  ShowMoreButton, UpcomingWorkshopsDiv } from "../WorkshopPage/workshop.page.style";
+import {
+  CardsDiv,
+  ShowMoreButton,
+  UpcomingWorkshopsDiv,
+} from "../WorkshopPage/workshop.page.style";
 import { CardBg, DonateBg } from "../ChapterPage/chapter.styles";
-import {PastWorkshopsDiv} from './individualchapter.page.styles'
-
+import { PastWorkshopsDiv } from "./individualchapter.page.styles";
+import PageHeader from "../../components/PageHeader/Header.component";
 
 class IndividualChapter extends React.Component {
   state = {
@@ -50,57 +54,57 @@ class IndividualChapter extends React.Component {
     myRef: React.createRef(),
     teamLead: [],
     membersInfo: [],
-    carouselImages: []
-  }
-  
-  componentDidMount(){
+    carouselImages: [],
+  };
+
+  componentDidMount() {
     this.fetchData();
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
 
   fetchData = async () => {
-    const chapterId = this.props.match.params.chapterId
-   
-    let chapterData = await fetch(`http://143.110.253.103:5000/api/chapter/${chapterId}`)
-    chapterData = await chapterData.json()
-   
-    this.setState({
-      chapterInfo: chapterData.chapter,
-      workshops: chapterData.chapter.workshops,
-      team: chapterData.chapter.team,
-      loading: false,
-      carouselImages: chapterData.chapter.carouselImages
-    }, () => {
-     
-    })
+    const chapterId = this.props.match.params.chapterId;
+
+    let chapterData = await fetch(
+      `http://143.110.253.103:5000/api/chapter/${chapterId}`
+    );
+    chapterData = await chapterData.json();
+
+    this.setState(
+      {
+        chapterInfo: chapterData.chapter,
+        workshops: chapterData.chapter.workshops,
+        team: chapterData.chapter.team,
+        loading: false,
+        carouselImages: chapterData.chapter.carouselImages,
+      },
+      () => {}
+    );
     this.manageTeam();
-  }
+  };
 
   manageTeam = () => {
-    let team = this.state.team
-    let members = []
+    let team = this.state.team;
+    let members = [];
     team.map((member) => {
-      if(member.designation == 'CHAPTER LEAD'){
-        this.state.teamLead = member
-      }else{
-        members.push([member.image, member.name])
+      if (member.designation == "CHAPTER LEAD") {
+        this.state.teamLead = member;
+      } else {
+        members.push([member.image, member.name]);
         this.setState({
-          membersInfo: members
-        })
+          membersInfo: members,
+        });
       }
-    })
-   
-  }
+    });
+  };
 
   chapterClick = (e) => {
-   
-    this.props.history.push(`/chapter/${e.target.dataset.id}`)
-  }
+    this.props.history.push(`/chapter/${e.target.dataset.id}`);
+  };
 
   click = (e) => {
-   
-    this.props.history.push(`/workshop/${e.target.dataset.id}`)
-  }
+    this.props.history.push(`/workshop/${e.target.dataset.id}`);
+  };
 
   toggleShow = () => {
     if (this.state.expanded === false) {
@@ -120,15 +124,9 @@ class IndividualChapter extends React.Component {
   };
 
   render() {
-    const {
-      chapterInfo,
-      loading,
-      buttonText,
-      workshops,
-      team
-    } = this.state
-   
-    
+    const { chapterInfo, loading, buttonText, workshops, team } = this.state;
+    let joinText = `Join ${this.state.chapterInfo.chapterName}`;
+
     return (
       <div>
         <GlobalStyle />
@@ -138,35 +136,19 @@ class IndividualChapter extends React.Component {
           textOut="#F05680"
           textIn="white"
         />
-  
-  
-        <StyledJumbo>
-          <Row>
-            <Col md={6}>
-              <Image
-                class="img-responsive float-left"
-                width="100%"
-                src={indchapter}
-              />
-            </Col>
-            <Col md={{ span: 5, offset: 1 }} class="d-flex flex-column mb-3">
-              <Row>
-                <StyleHead>{this.state.chapterInfo.chapterName}</StyleHead>
-              </Row>
-  
-              <ButtonDiv>
-                
-                  <ShadowButton Text={"CONTACT US"}  />
-                 
-                  <ShadowButton Text={"START A CHAPTER"}  />
-                  
-                  <ShadowButton Text={`Join ${this.state.chapterInfo.chapterName}`} link='https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform'/>
-                
-              </ButtonDiv>
-            </Col>
-          </Row>
-        </StyledJumbo>
-      
+
+        <PageHeader
+          img={indchapter}
+          title={this.state.chapterInfo.chapterName}
+          imgWidth="90%"
+          buttons={[
+            {
+              text: joinText,
+              link: "https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform",
+            },
+          ]}
+        />
+
         <StatsDiv>
           <Stats
             stats={[
@@ -176,109 +158,97 @@ class IndividualChapter extends React.Component {
             ]}
           />
         </StatsDiv>
-        {
-          loading ? null : (
-            <Corousel>
-            <ImageCorousel
-              imgUrls={this.state.carouselImages}
-            />
+        {loading ? null : (
+          <Corousel>
+            <ImageCorousel imgUrls={this.state.carouselImages} />
           </Corousel>
-          )
-        }
-          
-       
-       
+        )}
+
         <PastWorkshopsDiv>
-          <Heading heading={'PAST WORKSHOPS'} />
+          <Heading heading={"PAST WORKSHOPS"} />
           <CardBg ref={this.state.myRef}>
-          {loading ? (
-            <Spinner animation="border" variant="danger" className="mt-5" />
-          ) : (
-            <CardsDiv className="mt-5 flex-wrap">
-              {workshops
-                .slice(0, this.state.chapterItems)
-                .map((card) => (
+            {loading ? (
+              <Spinner animation="border" variant="danger" className="mt-5" />
+            ) : (
+              <CardsDiv className="mt-5 flex-wrap">
+                {workshops.slice(0, this.state.chapterItems).map((card) => (
                   <Card
                     onClick={this.click}
                     image={card.image}
                     id={card._id}
                     icon={card.courseIcon}
                     iconText={card.courseName}
-                    height = '100vh'
+                    height="100vh"
                     title={card.workshopName}
                     subtitle={card.dates}
                     description={card.description}
-                    isButton='hi'
-                    
+                    isButton="hi"
                   />
                 ))}
-            </CardsDiv>
-          )}
-          {!loading ? (
-            <ShowMoreButton onClick={this.toggleShow}>
-              {buttonText} {">"}
-            </ShowMoreButton>
-          ) : (
-            " "
-          )}
+              </CardsDiv>
+            )}
+            {!loading ? (
+              <ShowMoreButton onClick={this.toggleShow}>
+                {buttonText} {">"}
+              </ShowMoreButton>
+            ) : (
+              " "
+            )}
           </CardBg>
         </PastWorkshopsDiv>
         <TeamDiv>
-        <Team
-          heading="TEAM"
-         
-          leads={[
-            [
-              // "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-              // "Mushroom boss",
-              // "Head Of Fungi Development",
-              this.state.teamLead.image,
-              this.state.teamLead.name,
-              this.state.teamLead.designation
-
-            ]
-          ]}
-          mems={
-            // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
-            // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
-            // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
-            // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
-            this.state.membersInfo
-          }
-        />
+          <Team
+            heading="TEAM"
+            leads={[
+              [
+                // "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+                // "Mushroom boss",
+                // "Head Of Fungi Development",
+                this.state.teamLead.image,
+                this.state.teamLead.name,
+                this.state.teamLead.designation,
+              ],
+            ]}
+            mems={
+              // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
+              // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
+              // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
+              // ["https://source.unsplash.com/Dm-qxdynoEc/800x799", "Mushroom"],
+              this.state.membersInfo
+            }
+          />
         </TeamDiv>
         <OtherChapters>
-        <Heading heading={'OTHER CHAPTERS'} />
-        <CardBg>
-        <Card
-            image={ChapterCardImg}
-            title="Singapore Chapter"
-            id="- 60b4ce4b94369a4024c91de4"
-            onClick = {this.chapterClick}
-            //   icons={[[IconImg]]}
-            description="est. June 2020"
-            isButton={true}
-          />
-          <Card
-            image={ChapterCardImg}
-            title="Delhi Chapter"
-            id = '60b4caaa94369a4024c91de2'
-            onClick = {this.chapterClick}
-            subtitle=""
-            //   icons={[[IconImg]]}
-            description="est. June 2020"
-            isButton={true}
-          />
-        </CardBg>
+          <Heading heading={"OTHER CHAPTERS"} />
+          <CardBg>
+            <Card
+              image={ChapterCardImg}
+              title="Singapore Chapter"
+              id="- 60b4ce4b94369a4024c91de4"
+              onClick={this.chapterClick}
+              //   icons={[[IconImg]]}
+              description="est. June 2020"
+              isButton={true}
+            />
+            <Card
+              image={ChapterCardImg}
+              title="Delhi Chapter"
+              id="60b4caaa94369a4024c91de2"
+              onClick={this.chapterClick}
+              subtitle=""
+              //   icons={[[IconImg]]}
+              description="est. June 2020"
+              isButton={true}
+            />
+          </CardBg>
         </OtherChapters>
         <DonateBg>
-        <Donate />
+          <Donate />
         </DonateBg>
         <Footer />
       </div>
     );
   }
 }
-
 
 export default IndividualChapter;

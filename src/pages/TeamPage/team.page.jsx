@@ -7,11 +7,7 @@ import {
   StylePee,
   Bord,
   TeamDiv,
-  HeaderImg,
-  ChapterHeading,
-  HeaderInfo,
-  HeaderImage,
-  HeaderBg,
+  PinkTextBoxDiv,
 } from "./team.page.styles";
 import team from "../../assets/team/team.png";
 import ChapterHeaderImg from "../../assets/Chapter/chapter_header.png";
@@ -24,6 +20,9 @@ import Team from "../../components/Team/Team.component";
 import Donate from "../../components/Donate/donate.component";
 import Footer from "../../components/Footer/footer.component";
 import { PinkDiv } from "../JoinUsPage/joinus.page.style";
+import PageHeader from "./../../components/PageHeader/Header.component";
+import Heading from "../../components/Heading/heading.component";
+import { DonateBg } from "../ChapterPage/chapter.styles";
 
 export default class Home extends Component {
   state = {
@@ -38,15 +37,13 @@ export default class Home extends Component {
         team: team.userData,
         leading: false,
       },
-      () => {
-       
-      }
+      () => {}
     );
   };
 
   componentDidMount() {
     this.fetchData();
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
   render() {
     const { org, design, marketing, webD, socialMedia } = this.state;
@@ -61,21 +58,28 @@ export default class Home extends Component {
               textOut="#F05680"
               textIn="white"
             />
-            <HeaderBg>
-              <HeaderImg src={team}/>
-              <HeaderInfo>
-                <ChapterHeading>OUR TEAM</ChapterHeading>
-                <Bord>
-                      <ShadowButton Text={"INTERN WITH US"} width="30vw" />
-                    </Bord>
-                    <Bord>
-                      <ShadowButton Text={"START A CHAPTER"} width="30vw" />
-                    </Bord>
-                    <Bord>
-                      <ShadowButton Text={"JOIN OUR COMMUNTIY"} width="30vw" />
-                    </Bord>
-              </HeaderInfo>
-            </HeaderBg>
+
+            <PageHeader
+              img={team}
+              title="Our Team"
+              imgWidth="90%"
+              subtitle="A line here about the team!"
+              buttons={[
+                { text: "INTERN WITH US" },
+                { text: "START A CHAPTER" },
+                { text: "JOIN OUR COMMUNITY" },
+              ]}
+            />
+
+            <div
+              style={{
+                width: "100%",
+                textAlign: "center",
+                marginBottom: "1em",
+              }}
+            >
+              <Heading heading="DIRECTORS" />
+            </div>
 
             <Directors
               imgUrlOne={this.state.team.org[3]}
@@ -83,12 +87,14 @@ export default class Home extends Component {
               imgUrlTwo={this.state.team.org[1]}
               nameTwo={this.state.team.org[0]}
             />
-            <PinkDiv>
-            <PinkTextBox
-              heading="ABOUT THE DIRECTORS"
-              text="At The Girl Code, we aim to bridge the gender gap in the tech community by inspiring young girls to learn programming by hosting workshops at schools and universities local to them. Through our platform and intuitive curriculum, we plan to give rise to a new generation of female programmers set to take the world by storm."
-            />
-            </PinkDiv>
+
+            <PinkTextBoxDiv>
+              <PinkTextBox
+                heading="Our Story"
+                text="At The Girl Code, we aim to bridge the gender gap in the tech community by inspiring young girls to learn programming by hosting workshops at schools and universities local to them. Through our platform and intuitive curriculum, we plan to give rise to a new generation of female programmers set to take the world by storm."
+              />
+            </PinkTextBoxDiv>
+
             <TeamDiv>
               <Team
                 backgroundColour="#ffffff"
@@ -121,7 +127,10 @@ export default class Home extends Component {
                 mems={this.state.team.socialMedia.mems}
               />
             </TeamDiv>
-            <Donate />
+            <DonateBg>
+              <Donate />
+            </DonateBg>
+
             <Footer />
           </>
         ) : null}

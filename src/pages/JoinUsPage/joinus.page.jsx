@@ -15,6 +15,7 @@ import {
   InternshipsSection,
   PinkDiv,
   HeaderButtons,
+  ButtonDiv,
 } from "./joinus.page.style";
 import Heading from "../../components/Heading/heading.component";
 import PinkTextBox from "../../components/PinkTextBox/pinktextbox.component";
@@ -27,6 +28,8 @@ import Footer from "../../components/Footer/footer.component";
 import ShadowButton from "../../components/Button/button.component";
 import { DonateBg } from "../ChapterPage/chapter.styles";
 import { Link } from "react-router-dom";
+import PageHeader from "../../components/PageHeader/Header.component";
+import TextCard from "../../components/TextCard/textcard.component";
 
 const JoinUs = () => {
   useEffect(() => {
@@ -42,35 +45,27 @@ const JoinUs = () => {
         textOut="#F05680"
         textIn="#F05680"
       />
-      <Container style={{ paddingTop: "2rem" }}>
-        <Row>
-          <Col md={6}>
-            <Image src={JoinImg} alt="Join Us" fluid />
-          </Col>
-          <Col xs={0} md={1} />
-          <Col md={5} className="text-center" style={{ padding: "2vh 0 0 0" }}>
-            <MainHeading>Join Us </MainHeading>
-            <HeaderText>Together everyone achieves more!</HeaderText>
-            <HeaderButtons>
-              <ShadowButton
-                Text={"INTERN WITH US"}
-                width="90%"
-                link="https://docs.google.com/forms/d/e/1FAIpQLSdNnrbYFbdkTMnlod-Pp74KRPLipqN2RHmT1gwDoudFcxbG9Q/viewform"
-              />
-              <ShadowButton
-                Text="JOIN/START A CHAPTER"
-                width="90%"
-                link="https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform"
-              />
-              <ShadowButton
-                Text={"JOIN THE COMMUNITY"}
-                link="https://docs.google.com/forms/u/3/d/e/1FAIpQLSeqIjXp77VuEHqxevq3hdw_myuCVzYGJsKzFNpdWYwHKbNI-Q/viewform"
-                width="90%"
-              />
-            </HeaderButtons>
-          </Col>
-        </Row>
-      </Container>
+
+      <PageHeader
+        img={JoinImg}
+        title="Join Us"
+        subtitle="Help us reach our mission!"
+        buttons={[
+          {
+            text: "INTERN WITH US",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSdNnrbYFbdkTMnlod-Pp74KRPLipqN2RHmT1gwDoudFcxbG9Q/viewform",
+          },
+          {
+            text: "JOIN/START A CHAPTER",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSd5_ISkWJPslqQQE4l4WyL7of9ThLfVMSX3DP7kH5SLuu3MaA/viewform",
+          },
+          {
+            text: "JOIN OUR COMMUNITY",
+            link: "https://docs.google.com/forms/u/3/d/e/1FAIpQLSeqIjXp77VuEHqxevq3hdw_myuCVzYGJsKzFNpdWYwHKbNI-Q/viewform",
+          },
+        ]}
+      />
+
       <PinkDiv>
         <PinkTextBox
           heading={"WHY WORK WITH US"}
@@ -79,46 +74,45 @@ const JoinUs = () => {
           }
         />
       </PinkDiv>
+
       <InternshipsSection>
         <Heading heading="INTERNSHIPS" />
         <Container className="mt-5">
           <Internships
             content={[
               [
-                "WEB DEVELOPMENT",
-                "USE YOUR WEB-DEV EXPERTISE AND WORK WITH OUR EXCELLENT TEAM TO DEVELOP OUR PLATFORM!",
-                WebDevImg,
-              ],
-              [
                 "CONTENT",
-                "USE YOUR LANGUAGE SKILLS TO DRAFT CONTENT FOR TGC’S SOCIALS AND CURRICULUM!",
+                "Use your language skills to draft content for TGC!",
                 ContentImg,
               ],
               [
                 "OUTREACH",
-                "USE YOUR SOCIAL SKILLS AND HELP THE GIRL CODE REACH MORE PEOPLE!",
+                "Use your marketing skills to help TGC reach more people!",
                 OutreachImg,
               ],
               [
                 "DESIGN",
-                "USE YOUR DESIGN PROWESS TO MAKE CREATIVE DIGITAL CONTENT FOR TGC",
+                "Use your design prowess to create creative digital art for TGC!",
                 DesignImg,
               ],
               [
                 "SOCIAL MEDIA",
-                "USE YOUR SOCIAL MEDIA SAVVINESS TO EXPAND TGC’S SOCIAL PRESENCE!",
+                "Use your Social Media Savviness to expand TGC's social presence!",
                 SocialMediaImg,
               ],
             ]}
           />
         </Container>
-        <Button
-          Text={"Apply Now"}
-          link="https://docs.google.com/forms/d/e/1FAIpQLSdNnrbYFbdkTMnlod-Pp74KRPLipqN2RHmT1gwDoudFcxbG9Q/viewform"
-          width="20vw"
-          style={{ alignSelf: "center" }}
-        />
+        <ButtonDiv>
+          <Button
+            Text={"Apply Now"}
+            link="https://docs.google.com/forms/d/e/1FAIpQLSdNnrbYFbdkTMnlod-Pp74KRPLipqN2RHmT1gwDoudFcxbG9Q/viewform"
+            width="100%"
+            style={{ alignSelf: "center" }}
+          />
+        </ButtonDiv>
       </InternshipsSection>
+
       <JoinCommunity />
       <StartChapterSection>
         <Heading heading={"Start a chapter"} />
