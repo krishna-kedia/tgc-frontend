@@ -14,9 +14,11 @@ export const CardHolder = styled.div`
   border-radius: 15px;
   box-shadow: 0px 0px 5px 2px rgba(71, 71, 71, 0.22);
   cursor: pointer;
+  overflow: hidden;
   @media screen and (max-width: 520px) {
     margin: 1rem 0rem;
     width: inherit - 4rem;
+    overflow: hidden;
     /* font-size: 30px; */
   }
 `;

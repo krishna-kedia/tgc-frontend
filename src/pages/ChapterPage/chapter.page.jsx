@@ -123,7 +123,7 @@ class Chapter extends Component {
           bgOut="transparent"
           bgIn="#F05680"
           textOut="#F05680"
-          textIn="#F05680"
+          textIn="white"
         />
         <HeaderBg>
           <Header />

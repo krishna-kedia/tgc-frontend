@@ -5,11 +5,16 @@ export const HeaderBg = styled.div`
   width: 100%;
   flex-wrap: wrap;
   // justify-content: space-around;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const HeaderImg = styled.img`
   @media (max-width: 768px) {
-    height: 20vh;
+    height: 50vh;
   }
 `;
 
@@ -55,6 +60,12 @@ export const DonateBg = styled.div`
   flex-direction: row;
   justify-content: center;
   margin: 5rem 0 0 10vw;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const PinkDiv = styled.div``;

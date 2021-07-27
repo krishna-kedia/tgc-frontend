@@ -10,6 +10,9 @@ export const StyledJumbo = styled(Container)`
 `
 export const Bord = styled(Row)` 
     margin: 2vh 0;
+    @media(max-width: 768px){
+        margin: 0;
+    }   
 `
     
 export const StyleHead = styled.div`
@@ -42,6 +45,9 @@ export const ChapterHeading=styled.h1`
     font-size:70px;
     font-weight:700;
     padding-top:5rem;
+    @media(max-width: 768px){
+        padding-top: 0.5vh;
+    }    
 `
 export const ButtonBg=styled.div`
     margin-right:20rem;
@@ -86,7 +92,7 @@ export const HeaderImg = styled.img`
   padding: 0 0 0 2vw;
   height: 90vh;
   @media(max-width: 768px){
-      height: 40vh;
+      height: 60vh;
   }
 `;
 
@@ -97,7 +103,7 @@ padding: 0 0 0 10vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 0 2vh 0;
+ 
 }
 `;
 

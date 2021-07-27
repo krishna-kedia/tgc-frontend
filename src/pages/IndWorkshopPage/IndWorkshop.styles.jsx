@@ -18,10 +18,10 @@ export const SubHeading = styled.h1`
   text-align: center;
 `;
 export const BoxStyle = styled.div`
-  margin: 6rem 6rem;
-  @media(max-width: 768px){
-    margin: 1rem;
-  }
+margin: 3rem 6rem;
+@media screen and (max-width: 768px) {
+  margin: 0.8rem;
+}
 `;
 export const CardHeading = styled.div`
   text-align: center;

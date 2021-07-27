@@ -25,6 +25,7 @@ import Donate from "../../components/Donate/donate.component";
 import Stats from "../../components/Stats/stats.component";
 import Footer from "../../components/Footer/footer.component";
 import ShadowButton from "../../components/Button/button.component";
+import { DonateBg } from "../ChapterPage/chapter.styles";
 
 class Workshop extends React.Component {
   state = {
@@ -89,7 +90,7 @@ class Workshop extends React.Component {
           bgOut="transparent"
           bgIn="#F05680"
           textOut="#F05680"
-          textIn="#F05680"
+          textIn="white"
         />
         <Container style={{ paddingTop: "5rem" }}>
           <Row>
@@ -193,7 +194,9 @@ class Workshop extends React.Component {
           <Heading heading={"Start a chapter"} />
           <StartChapter />
         </StartChapterSection>
-        <Donate />
+        <DonateBg>
+          <Donate />
+        </DonateBg>
         <Footer />
       </>
     );

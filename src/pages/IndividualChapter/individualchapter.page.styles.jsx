@@ -12,7 +12,7 @@ export const ButtonDiv = styled.div`
   display: flex;
   flex-direction: column;
   height: 40vh;
-  margin-top: 5vh;
+  margin: 5vh;
   justify-content: space-around; 
 `
 
@@ -23,6 +23,11 @@ export const StyleHead = styled.div`
     color: #F05680;
     margin-left: 10px;
     margin-bottom: 15px;
+    @media screen and (max-width: 768px) {
+      padding: 0.1em;
+      font-size: 40px;
+      text-align: center;
+    }
 `
 
 export const PinkTextBoxDiv = styled.div`
