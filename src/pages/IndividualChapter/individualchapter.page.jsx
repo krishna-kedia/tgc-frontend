@@ -33,6 +33,7 @@ import {
   OtherChapters,
   TeamDiv,
   ButtonDiv,
+  OtherChapterContainer,
 } from "./individualchapter.page.styles";
 import {
   CardsDiv,
@@ -220,11 +221,11 @@ class IndividualChapter extends React.Component {
         </TeamDiv>
         <PastWorkshopsDiv>
           <Heading heading={"OTHER CHAPTERS"} />
-          <CardBg>
+          <OtherChapterContainer>
             <Card
               image={ChapterCardImg}
               title="Singapore Chapter"
-              id="- 60b4ce4b94369a4024c91de4"
+              id="60b4ce4b94369a4024c91de4"
               onClick={this.chapterClick}
               //   icons={[[IconImg]]}
               description="est. June 2020"
@@ -240,7 +241,7 @@ class IndividualChapter extends React.Component {
               description="est. June 2020"
               isButton={true}
             />
-          </CardBg>
+          </OtherChapterContainer>
         </PastWorkshopsDiv>
         <DonateBg>
           <Donate />

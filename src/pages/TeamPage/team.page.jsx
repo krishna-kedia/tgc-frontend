@@ -32,12 +32,13 @@ export default class Home extends Component {
   fetchData = async () => {
     let team = await fetch(`http://143.110.253.103:5000/api/users`);
     team = await team.json();
+    console.log(team)
     this.setState(
       {
         team: team.userData,
         leading: false,
       },
-      () => {}
+      () => {console.log(this.state)}
     );
   };
 

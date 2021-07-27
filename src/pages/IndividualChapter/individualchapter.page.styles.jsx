@@ -67,3 +67,14 @@ export const PastWorkshopsDiv = styled.div`
     padding: 4rem 15rem;
   }
 `;
+
+export const OtherChapterContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 0em 1em;
+  justify-content: space-between;
+  @media screen and (max-width: 768px){
+    display: flex;
+    flex-direction: column;
+  }
+`;
