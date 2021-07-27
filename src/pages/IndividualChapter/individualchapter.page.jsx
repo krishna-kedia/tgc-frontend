@@ -87,20 +87,16 @@ class IndividualChapter extends React.Component {
   };
 
   manageTeam = () => {
-    console.log('manage team')
-    let team = this.state.team;
+        let team = this.state.team;
     let members = [];
     team.map((member) => {
       if (member.designation == "CHAPTER LEAD") {
         this.state.teamLead = member;
-        console.log('if else')
-      } else {
-        console.log('else')
-        members.push([member.image, member.name]);
+              } else {
+                members.push([member.image, member.name]);
         this.setState({
           membersInfo: members,
-        }, console.log(this.state));
-      }
+        })}
     });
   };
 
@@ -132,14 +128,6 @@ class IndividualChapter extends React.Component {
   render() {
     const { chapterInfo, loading, buttonText, workshops, team } = this.state;
     let joinText = `Join ${this.state.chapterInfo.chapterName}`;
-    console.log(this.state.teamLead, this.state)
-    let lead
-    this.state.team.map((t) => {
-      if(t.designation = 'CHAPTER LEAD'){
-        //console.log(t)
-        lead = t
-      }
-    })
     return (
       <div>
         <GlobalStyle />

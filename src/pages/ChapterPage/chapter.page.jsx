@@ -41,8 +41,7 @@ class Chapter extends Component {
     try {
       let chapters = await fetch("http://143.110.253.103:5000/api/chapters");
       chapters = await chapters.json();
-      console.log(chapters, "fetch data");
-      this.setState(
+            this.setState(
         {
           chaptersInfo: chapters.chapters,
           stat1: chapters.stat1,
@@ -51,8 +50,7 @@ class Chapter extends Component {
           loading: false,
         },
         () => {
-          console.log(this.state, "hi hello");
-        }
+                  }
       );
     } catch (error) {}
   };
@@ -64,8 +62,7 @@ class Chapter extends Component {
   componentDidMount() {
     this.fetchData();
     window.scrollTo(0, 0);
-    console.log("component mounted");
-  }
+      }
 
   toggleShow = () => {
     if (this.state.expanded === false) {
@@ -86,8 +83,7 @@ class Chapter extends Component {
 
   render() {
     const { chaptersInfo, loading, buttonText } = this.state;
-    console.log(this.state, "render");
-    return (
+        return (
       <div>
         <NavBar
           bgOut="transparent"
